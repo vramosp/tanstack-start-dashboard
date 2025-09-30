@@ -21,11 +21,11 @@ import { getUser } from "@/data/users";
 import { createFileRoute, Outlet, redirect } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/dashboard")({
-  beforeLoad: async ({ context }) => {
-    if (!context.userSession.isAuthenticated) {
-      throw redirect({ to: "/" });
-    }
-  },
+  // beforeLoad: async ({ context }) => {
+  //   if (!context.userSession.isAuthenticated) {
+  //     throw redirect({ to: "/" });
+  //   }
+  // },
   component: DashboardLayout,
   loader: async () => await getUser(),
 });
